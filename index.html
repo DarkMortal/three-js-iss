@@ -4,10 +4,33 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <style>
+      body{
+        overflow: hidden;
+      }
+      .longtitude {
+       
+      }
+      .container {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        height: 100vh;
+         color: rgb(255, 255, 255);
+      }
+    </style>
     <title>Vite App</title>
   </head>
   <body>
     <canvas id="bg"></canvas>
-    <script type="module" src="/main.js"></script>
+
+    <div class="container">
+      <h3 id="latitude" class="latitude"></h3>
+      <h3 id="longtitude" class="longtitude"></h3>
+      <h3 id="date"></h3>
+    </div>
+
+    <script type="module" src="/main.js" defer></script>
   </body>
 </html>
