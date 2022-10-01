@@ -157,7 +157,7 @@ const getSateliteData = async () => {
   const issPos= calcPosFromLatLonRad({
     lat: resp.iss_position.latitude,
     lon:resp.iss_position.longitude,
-    radius:11,
+    radius:12,
   });
 boxMesh.position.set(issPos.x, issPos.y, issPos.z)
 // earth.position.set(issPos.x, issPos.y, issPos.z);
