@@ -33,7 +33,7 @@ camera.position.setX(0); //! set it to 0 to see the entire earth (puts it in the
 // scene.add(cube);
 
 // camera.position.z = 5;
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambientLight);
 // !point light // like a bulb or some powerful lightsourse
 const pointLight = new THREE.PointLight(0xffffff, 2);
@@ -65,10 +65,10 @@ const cloudtexture = new THREE.TextureLoader().load(
 
 // //! earth texture
 const normalTexture = new THREE.TextureLoader().load(
-  "./earth/textures/IMG_20220929_173047.jpg"
+  "./earth/textures/Textture.jpg"
 );
 const earthtextture = new THREE.TextureLoader().load(
-  "./earth/textures/IMG_20220929_173034.jpg"
+  "./earth/textures/earth.jpg"
 );
 const earth = new THREE.Mesh(
   new THREE.SphereGeometry(10, 32, 32),
