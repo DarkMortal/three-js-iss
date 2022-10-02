@@ -78,6 +78,7 @@ gltfLoader.load(
   './iss/issDraco.gltf',
   (gltf) => {
     gltf.scene.scale.set(0.3, 0.3, 0.3);
+    gltf.scene.rotateY(-4.7);
     iss.add(gltf.scene);
     scene.add(iss);
   },
@@ -90,24 +91,9 @@ function animate() {
   controls.update();
 }
 
-//* Loading the 3d model 
-
-// const loader = new GLTFLoader();
-// loader.load(
-//   "./earth/scene.gltf",
-//   function (gltf) {
-//     test.scene.add(gltf.scene);
-//     gltf.position.set(6,0, 5)
-//     console.log("earth added");
-//   }
-
-//   // function (error) {
-//   //   console.error(error);
-//   // }
-// );
-// ! to get the satelite data
+// To get the satelite data
 const getSateliteData = async () => {
-  var resp = await fetch("http://api.open-notify.org/iss-now.json")
+  var resp = await fetch("https://api.wheretheiss.at/v1/satellites/25544")
     .then((res) => {
       return res.json();
     })
@@ -119,18 +105,22 @@ const getSateliteData = async () => {
   var longititude = document.getElementById("longtitude");
   var latitude = document.getElementById("latitude");
   var date = document.getElementById("date");
+  var altitude = document.getElementById("altitude");
+  var velocity = document.getElementById("velocity");
 
   var theDate = new Date(resp.timestamp * 1000);
   var dateString = theDate.toGMTString();
   console.log(dateString);
   date.innerHTML = dateString;
 
-  latitude.innerHTML = `Latitude : ${resp.iss_position.latitude}`;
-  longititude.innerHTML = `Longtitude : ${resp.iss_position.longitude}`;
+  latitude.innerText = `Latitude : ${resp.latitude}`;
+  longititude.innerText = `Longtitude : ${resp.longitude}`;
+  altitude.innerText = `Altitude : ${resp.altitude}`;
+  velocity.innerText = `Velocity : ${resp.velocity}`;
 
   const issPos= calcPosFromLatLonRad({
-    lat: resp.iss_position.latitude,
-    lon:resp.iss_position.longitude,
+    lat: resp.latitude,
+    lon:resp.longitude,
     radius:12,
   });
 iss.position.set(issPos.x, issPos.y, issPos.z);
