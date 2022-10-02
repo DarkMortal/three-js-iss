@@ -1,6 +1,6 @@
 const factorAngle = Math.PI / 180;
 
-export default function calcPosFromLatLonRad({ lat, lon, radius }) {
+export function calcPosFromLatLonRad({ lat, lon, radius }) {
   var phi = (90 - lat) * factorAngle;
   var theta = (lon + 180) * factorAngle;
 
@@ -10,3 +10,13 @@ export default function calcPosFromLatLonRad({ lat, lon, radius }) {
 
   return { x, y, z };
 }
+
+export function clickZoom(value, zoomType){
+  if (value >= 20 && zoomType === "zoomIn") {
+    return value - 5;
+  } else if (value <= 75 && zoomType === "zoomOut") {
+    return value + 5;
+  } else {
+    return value;
+  }
+};

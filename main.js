@@ -5,7 +5,7 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import * as THREE from "three";
-import calcPosFromLatLonRad from "./utils/calcPosFromLatLong";
+import {calcPosFromLatLonRad, clickZoom} from "./utils/functions";
 
 const scene = new THREE.Scene(); //! 1. scene
 const camera = new THREE.PerspectiveCamera(
@@ -104,10 +104,10 @@ const getSateliteData = async () => {
       return res.json();
     })
     .then((resp) => {
-      console.log(resp);
+      //console.log(resp);
       return resp;
     });
-  console.log(resp);
+  //console.log(resp);
   var longititude = document.getElementById("longtitude");
   var latitude = document.getElementById("latitude");
   var date = document.getElementById("date");
@@ -116,8 +116,8 @@ const getSateliteData = async () => {
 
   var theDate = new Date(resp.timestamp * 1000);
   var dateString = theDate.toGMTString();
-  console.log(dateString);
-  date.innerHTML = dateString;
+  //console.log(dateString);
+  date.innerText = dateString;
 
   latitude.innerText = `Latitude : ${resp.latitude}`;
   longititude.innerText = `Longtitude : ${resp.longitude}`;
@@ -138,3 +138,25 @@ getSateliteData();
 
 }, 5000);
 animate();
+
+function getFov(){
+  return Math.floor(
+    (2 *
+      Math.atan(camera.getFilmHeight() / 2 / camera.getFocalLength()) *
+      180) /
+      Math.PI
+  );
+};
+
+document.addEventListener('keydown',(evt) => {
+  if(evt.key == '+'){
+    const fov = getFov();
+    camera.fov = clickZoom(fov, "zoomIn");
+    camera.updateProjectionMatrix();
+  }
+  if(evt.key == '-'){
+    const fov = getFov();
+    camera.fov = clickZoom(fov, "zoomOut");
+    camera.updateProjectionMatrix();
+  }
+});
