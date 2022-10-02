@@ -76,7 +76,7 @@ gltfLoader.load(
   './iss/issDraco.gltf',
   (gltf) => {
     gltf.scene.scale.set(0.3, 0.3, 0.3);
-    gltf.scene.rotateY(-4.7);
+    //gltf.scene.rotateY(-4.7);
     iss.add(gltf.scene);
     scene.add(iss);
   },
