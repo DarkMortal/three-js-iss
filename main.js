@@ -91,6 +91,12 @@ function animate() {
   controls.update();
 }
 
+window.addEventListener('resize',()=>{
+    renderer.setSize(innerWidth, innerHeight);
+    camera.aspect = innerWidth/innerHeight;
+    camera.updateProjectionMatrix();
+});
+
 // To get the satelite data
 const getSateliteData = async () => {
   var resp = await fetch("https://api.wheretheiss.at/v1/satellites/25544")
