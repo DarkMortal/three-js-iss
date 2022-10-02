@@ -21,7 +21,7 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 // document.body.appendChild(renderer.domElement);
-camera.position.setZ(25); //! set it to 25 to see the entire earth
+camera.position.setZ(50); //! set it to 50 to see the entire earth
 camera.position.setX(0); //! set it to 0 to see the entire earth (puts it in the center of screen)
 camera.position.setY(5)
 
@@ -53,10 +53,8 @@ const earth = new THREE.Mesh(
     //bumpScale: 12,
   })
 );
-earth.position.setZ(0);
-// earth.position.setY(-10);
+earth.position.set(0,0,0);
 scene.add(earth);
-earth.rotateY(-4.7) 
 
 //! this is the background
 const space = new THREE.TextureLoader().load("./tycho8.jpg/tycho8.jpg");
@@ -127,7 +125,7 @@ const getSateliteData = async () => {
   const issPos= calcPosFromLatLonRad({
     lat: resp.latitude,
     lon:resp.longitude,
-    radius:12,
+    radius: 12,
   });
 iss.position.set(issPos.x, issPos.y, issPos.z);
 scene.add(iss);
