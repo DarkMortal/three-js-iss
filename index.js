@@ -7,6 +7,21 @@ var bMobile =   // will be true if running on a mobile device
 if(bMobile) document.getElementById("canvasOne").style.height = "80vh";
 else document.getElementById("canvasOne").style.height = "95vh";
 
+const mymap = L.map('issMap').setView([0, 0], 1);
+const attribution ='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+
+const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+const tiles = L.tileLayer(tileUrl, { attribution });
+tiles.addTo(mymap);
+
+// Making a marker with a custom icon
+const issIcon = L.icon({
+    iconUrl: './ISS Model/iss2DImage.png',
+    iconSize: [50, 50],
+    iconAnchor: [25, 16]
+});
+const marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
+
 var wwd = new WorldWind.WorldWindow("canvasOne");
 
 wwd.addLayer(new WorldWind.BMNGOneImageLayer());
@@ -50,6 +65,8 @@ const getSateliteData = async () => {
         return resp;
       });
 
+    marker.setLatLng([resp.latitude, resp.longitude]);
+
     let longititude = document.getElementById("longtitude");
     let latitude = document.getElementById("latitude");
     let date = document.getElementById("date");
@@ -60,13 +77,13 @@ const getSateliteData = async () => {
     let dateString = theDate.toGMTString();
     date.innerText = dateString;
 
-    latitude.innerText = `Latitude : ${parseFloat(resp.latitude.toFixed(4))}`;
-    longititude.innerText = `Longtitude : ${parseFloat(resp.longitude.toFixed(4))}`;
-    altitude.innerText = `Altitude : ${parseFloat(resp.altitude.toFixed(4))} km`;
-    velocity.innerText = `Velocity : ${parseFloat(resp.velocity.toFixed(4))} kmph`;
+    latitude.innerText = parseFloat(resp.latitude.toFixed(4));
+    longititude.innerText = parseFloat(resp.longitude.toFixed(4));
+    altitude.innerText = parseFloat(resp.altitude.toFixed(4));
+    velocity.innerText = parseFloat(resp.velocity.toFixed(4));
     
     // Define a position for locating the model.
-    let position = new WorldWind.Position(resp.latitude, resp.longitude, 1000e3);
+    let position = new WorldWind.Position(resp.latitude, resp.longitude, resp.altitude*1000);
     issScene.position = position;
 
     if(locked.checked){
@@ -78,27 +95,19 @@ const getSateliteData = async () => {
     
     if(!isModelAdded){
         wwd.addLayer(modelLayer);
+        mymap.setView([resp.latitude, resp.longitude], 2);
         isModelAdded = true;
     }
 };
 
-setInterval(() => {
-    getSateliteData();
-}, 5000);
+setInterval(getSateliteData,5000);
 
 var locked = document.getElementById("lock"),
     data = document.getElementById("showData"),
     controls = document.getElementById("showControls");
 
-window.onload = ()=>{
-    locked.checked = true;
-    data.checked = true;
-    controls.checked = true;
-    document.querySelector(".splash").style.display = "none";
-}
-
 locked.addEventListener("click",()=>{
-    wwd.goTo(new WorldWind.Location(currentPosX, currentPosY));
+    if(locked.checked) wwd.goTo(new WorldWind.Location(currentPosX, currentPosY));
 });
 
 data.addEventListener("click",()=>{

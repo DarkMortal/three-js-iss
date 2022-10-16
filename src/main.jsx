@@ -7,3 +7,18 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>
 );
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+      {pageLanguage: 'en'},
+      'google_translate_element'
+  );
+}
+
+window.onload = ()=>{
+  locked.checked = true;
+  data.checked = true;
+  controls.checked = true;
+  googleTranslateElementInit();
+  document.querySelector(".splash").style.display = "none";
+}

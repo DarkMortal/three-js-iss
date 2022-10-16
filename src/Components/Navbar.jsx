@@ -17,10 +17,10 @@ export default function Navbar(props) {
                 <a className="nav-link active" href="#">Past Missions</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">History of ISS</a>
+                <a className="nav-link active" href="#">About Team</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="#">About Team</a>
+                <a className="nav-link active" aria-current="page" href="#issMap">2D Map</a>
               </li>
             </ul>
             <form className="d-flex" style={{float: 'right'}}>
