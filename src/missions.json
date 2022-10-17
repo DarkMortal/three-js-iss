@@ -1,0 +1,27 @@
+[
+    {
+        "id": 0,
+        "heading": "Expedition 1",
+        "body": "The first long-duration stay on the International Space Station (ISS). The three-person crew stayed aboard the station for 136 days, from November 2000 to March 2001. It was the beginning of an uninterrupted human presence on the station which continues as of October 2022."
+    },
+    {
+        "id": 1,
+        "heading": "Expedition 34",
+        "body": "Some of the science objectives included investigations of the human cardiovascular system in space, studies on fish and their sensation of gravity, and the impacts of solar radiation on Earth's climate. During the expedition, the robotic platform Robonaut, a humanoid robot test platform, continued testing."
+    },
+    {
+        "id": 2,
+        "heading": "Exploring the 5th-state of matter",
+        "body": "25 years ago, scientists first produced a fifth state of matter with properties totally unlike solids, liquids, gases, and plasmas."
+    },
+    {
+        "id": 3,
+        "heading": "Collection of more than 100 billion cosmic particles",
+        "body": "The Alpha Magnetic Spectrometer-02 has been looking for evidence of dark matter from outside of the space station since 2011, collecting data on more than 100 billion cosmic particles."
+    },
+    {
+        "id": 4,
+        "heading": "Current Expedition",
+        "body": "The 68th long-duration expedition to the International Space Station. The expedition began upon the departure of Soyuz MS-21 on 29 September 2022, with ESA astronaut Samantha Cristoforetti taking over as ISS commander. Initially, the expedition consisted of Cristoforetti and her three SpaceX Crew-4 crewmates Kjell N. Lindgren, Bob Hines and Jessica Watkins, as well as Roscosmos cosmonauts Sergey Prokopyev, Dmitry Petelin and American astronaut, Francisco Rubio, who launched aboard Soyuz MS-22 on September 21, 2022 and were transferred from Expedition 67 alongside the Crew-4 astronauts."
+    }
+]

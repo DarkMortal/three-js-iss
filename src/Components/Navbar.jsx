@@ -11,20 +11,20 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">About ISS</a>
+                <a className="nav-link active" aria-current="page" href="#info">About ISS</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="#">Past Missions</a>
+                <a className="nav-link active" href="#missions">Past Missions</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="#">About Team</a>
+                <a className="nav-link active" href="#aboutUs">About Team</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#issMap">2D Map</a>
               </li>
             </ul>
             <form className="d-flex" style={{float: 'right'}}>
-                <Toggle handleEvent={()=>{props.themeUpdate(!props.isDark)}}/>
+                <Toggle handleEvent={()=>{props.themeUpdate(!props.isDark)}} dark={props.default}/>
             </form>
           </div>
         </div>

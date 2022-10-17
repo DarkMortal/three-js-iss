@@ -55,7 +55,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
       <>
       <FormGroup onChange={props.handleEvent}>
         <FormControlLabel
-          control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
+          control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked={props.dark} />}
         />
       </FormGroup>    
       </>

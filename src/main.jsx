@@ -8,11 +8,22 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>
 );
 
+ReactDOM.createRoot(document.querySelector('footer')).render(
+  <React.StrictMode>
+    <div className="text-center p-3" style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}>
+        © ThinkSpace {new Date().getFullYear()}
+    </div>
+  </React.StrictMode>
+);
+
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
       {pageLanguage: 'en'},
       'google_translate_element'
   );
+}
+window.onbeforeunload = ()=>{
+  window.scrollTo(0, 0);
 }
 
 window.onload = ()=>{
@@ -20,5 +31,6 @@ window.onload = ()=>{
   data.checked = true;
   controls.checked = true;
   googleTranslateElementInit();
-  document.querySelector(".splash").style.display = "none";
+  document.querySelector(".splash").style.display = 'none';
+  document.body.style.overflow = 'scroll';
 }
