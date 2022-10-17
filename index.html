@@ -6,6 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="NASA SpaceApps Challenge 2022. track the ISS in 3D. Created by Saptarshi Dey"/>
         <title>ThinkSpace ISS</title>
+         <!-- Meta tags for OG-->
+        <meta property="og:site_name" content="ThinkSpace ISS">
+        <meta property="og:title" content="ThinkSpace ISS Tracker" />
+        <meta property="og:description" content="Created by Saptarshi Dey" />
+        <meta property="og:image" itemprop="image" content="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2011/02/international_space_station/17901087-2-eng-GB/International_Space_Station_pillars.jpg">
         <link rel="icon" type="image/png" href="./assets/Logo.4957ff9a.png" />
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
@@ -20,11 +25,12 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
         <!-- Leaflet JS -->
         <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
-      <script type="module" crossorigin src="./assets/index.cf63001e.js"></script>
+      <script type="module" crossorigin src="./assets/index.cd6a28d1.js"></script>
+      <link rel="stylesheet" href="./assets/index.509d017d.css">
     </head>
     <style>
         body{
-            overflow: scroll;
+            overflow: hidden;
             margin: 0;
             padding: 0;
             border: 0;
@@ -43,7 +49,9 @@
             position: absolute;
             top: 30px;
             left: 20px;
+            height: -moz-fit-content;
             height: fit-content;
+            width: -moz-fit-content;
             width: fit-content;
             color: white;
             background: transparent;
@@ -52,6 +60,7 @@
         }
         .switches{
             position: absolute;
+            width: -moz-fit-content;
             width: fit-content;
             top: 20px;
             right: 20px;
@@ -69,13 +78,13 @@
             text-align: center;
             color: white;
             font-size: larger;
-            padding-top: 10%;
-            transition: 1s;
+            padding-top: 40vh;
         }
         .sticky {
             position: sticky;
             top: 0;
             width: 100vw;
+            z-index: 90;
         }
         #issMap {
             height: 40vh;
@@ -83,6 +92,7 @@
         }
         footer {
             left: 0;
+            height: -moz-fit-content;
             height: fit-content;
             bottom: 0;
             width: 100%;
@@ -128,11 +138,7 @@
         </div>
         <div id="root"></div>
         <div id="issMap"></div>
-        <footer>
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-                © ThinkSpace
-            </div>
-        </footer>
+        <footer></footer>
         <script src="./index.js" type="text/javascript"></script>
         
     </body>
