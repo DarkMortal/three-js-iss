@@ -31,7 +31,7 @@ export default function AboutTeam(props) {
               </div>
             </div>
             <div className="col-md-3">
-              <img
+              <img style={{borderRadius: '5px'}}
                 src={logo}
                 className="img-fluid rounded-start"
                 alt="ThinkSpace"

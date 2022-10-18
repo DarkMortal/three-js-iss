@@ -14,7 +14,7 @@ export default function AboutsISS (props){
         <div className="card mb-3" style={{backgroundColor: 'transparent',border: 'none'}}>
           <div className="row g-0">
             <div className="col-md-4">
-              <img src={International_Space_Station} className="img-fluid rounded-start" alt="The International Space Station"/>
+              <img style={{borderRadius: '5px'}} src={International_Space_Station} className="img-fluid rounded-start" alt="The International Space Station"/>
             </div>
             <div className="col-md-8">
               <div className="card-body">
@@ -49,7 +49,7 @@ export default function AboutsISS (props){
               </div>
             </div>
             <div className="col-md-4">
-              <img src={OLD} className="img-fluid rounded-start" alt="The International Space Station"/>
+              <img style={{borderRadius: '5px'}} src={OLD} className="img-fluid rounded-start" alt="The International Space Station"/>
             </div>
           </div>
         </div>        

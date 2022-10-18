@@ -11,10 +11,12 @@ const images = [img1,img2,img3,img4,img5];
 
 const lightTheme = {
     backgroundColor: '#f6f7f8',
-    color: '#171f2e'
+    color: '#171f2e',
+    borderRadius: '0px'
 }, darkTheme = {
     backgroundColor: '#171f2e',
-    color: '#f6f7f8'
+    color: '#f6f7f8',
+    borderRadius: '0px'
 };
 
 export default function Missions(props) {
@@ -32,7 +34,7 @@ export default function Missions(props) {
                         <div id={`accrdionCollapse${elm.id}`} className="accordion-collapse collapse" aria-labelledby={`accrdionHeading${elm.id}`} data-bs-parent="#missions">
                         <div className="accordion-body" style={{backgroundColor: props.isDark?'#171f2e':'#f6f7f8'}}>
                         <div className="card mb-3" style={{backgroundColor: 'inherit'}}>
-                            <img src={images[elm.id]} className="card-img-top" alt="Expedition 1"/>
+                            <img src={images[elm.id]} className="card-img-top" alt={elm.heading}/>
                             <div className="card-body">
                                 <p className="card-text">{elm.body}</p>
                             </div>
