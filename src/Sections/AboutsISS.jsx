@@ -72,6 +72,7 @@ export default function AboutsISS (props){
               The results are products called "spinoffs." Scientists also study what happens to the body when people live in <b>microgravity</b> for a long time. NASA and its partners have learned how to keep a spacecraft working well. 
               All of these lessons will be important for future space exploration.
               NASA is currently working on a plan to explore other worlds. The space station is one of the first steps. NASA will use lessons learned on the space station to prepare for human missions that reach farther into space than ever before.
+              
               <br/>International Space Station Size & Mass :
               <ul>
                 <li>Pressurized Module Length: 218 feet along the major axis (67 meters)</li>
