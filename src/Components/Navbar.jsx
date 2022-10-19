@@ -22,6 +22,9 @@ export default function Navbar(props) {
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#issMap">2D Map</a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="#spotISS">Spot the ISS</a>
+              </li>
             </ul>
             <form className="d-flex" style={{float: 'right'}}>
                 <Toggle handleEvent={()=>{props.themeUpdate(!props.isDark)}} dark={props.default}/>
