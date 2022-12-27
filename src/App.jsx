@@ -27,7 +27,7 @@ function App() {
           <Missions isDark={isDark}/>
           <div id='spotISS' style={{width: '100%', textAlign: 'center', overflow: 'scroll'}}>
             <div className='box' style={{backgroundColor: isDark?'#171f2e':'#f6f7f8', display: 'inline-flex', width: '100%'}}>
-              <div className='iframeDiv'><iframe src='https://spotthestation.nasa.gov/widget/widget2.cfm' style={{width: '100%', height: '450px'}} frameborder='0' ></iframe></div>
+              <div className='iframeDiv'><iframe src='https://spotthestation.nasa.gov/widget/widget2.cfm' style={{width: '100%', height: '450px'}} frameBorder='0' ></iframe></div>
             </div>
           </div>
           <AboutTeam isDark={isDark}/>
