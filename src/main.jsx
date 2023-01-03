@@ -30,7 +30,7 @@ window.onload = ()=>{
   locked.checked = true;
   data.checked = true;
   controls.checked = true;
-  googleTranslateElementInit();
   document.querySelector(".splash").style.display = 'none';
   document.body.style.overflow = 'scroll';
+  googleTranslateElementInit();
 }

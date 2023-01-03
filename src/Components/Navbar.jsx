@@ -19,9 +19,9 @@ export default function Navbar(props) {
               <li className="nav-item">
                 <a className="nav-link active" href="#aboutUs">About Team</a>
               </li>
-              <li className="nav-item">
+              {/*<li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#issMap">2D Map</a>
-              </li>
+              </li>*/}
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#spotISS">Spot the ISS</a>
               </li>
