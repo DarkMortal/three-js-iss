@@ -7,7 +7,7 @@ var bMobile =   // will be true if running on a mobile device
 if(bMobile) document.getElementById("canvasOne").style.height = "80vh";
 else document.getElementById("canvasOne").style.height = "95vh";
 
-const mymap = L.map('issMap').setView([0, 0], 1);
+/*const mymap = L.map('issMap').setView([0, 0], 1);
 const attribution ='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -20,7 +20,7 @@ const issIcon = L.icon({
     iconSize: [50, 50],
     iconAnchor: [25, 16]
 });
-const marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
+const marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);*/
 
 var wwd = new WorldWind.WorldWindow("canvasOne");
 
@@ -65,7 +65,7 @@ const getSateliteData = async () => {
         return resp;
       });
 
-    marker.setLatLng([resp.latitude, resp.longitude]);
+    //marker.setLatLng([resp.latitude, resp.longitude]);
 
     let longititude = document.getElementById("longtitude");
     let latitude = document.getElementById("latitude");
@@ -95,7 +95,7 @@ const getSateliteData = async () => {
     
     if(!isModelAdded){
         wwd.addLayer(modelLayer);
-        mymap.setView([resp.latitude, resp.longitude], 2);
+        //mymap.setView([resp.latitude, resp.longitude], 2);
         isModelAdded = true;
     }
 };
