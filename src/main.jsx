@@ -11,7 +11,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 ReactDOM.createRoot(document.querySelector('footer')).render(
   <React.StrictMode>
     <div className="text-center p-3" style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}>
-        © ThinkSpace {new Date().getFullYear()}
+        © ThinkSpace {new Date().getFullYear()} <br/>
+        Created and Maintained by <a href="https://github.com/DarkMortal" target='_blank' style={{color: "white"}}>Saptarshi Dey</a>
     </div>
   </React.StrictMode>
 );
