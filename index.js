@@ -65,7 +65,7 @@ const getSateliteData = async () => {
         return resp;
       });
 
-    //marker.setLatLng([resp.latitude, resp.longitude]);
+    marker.setLatLng([resp.latitude, resp.longitude]);
 
     let longititude = document.getElementById("longtitude");
     let latitude = document.getElementById("latitude");
@@ -95,7 +95,7 @@ const getSateliteData = async () => {
     
     if(!isModelAdded){
         wwd.addLayer(modelLayer);
-        //mymap.setView([resp.latitude, resp.longitude], 2);
+        mymap.setView([resp.latitude, resp.longitude], 2);
         isModelAdded = true;
     }
 };
