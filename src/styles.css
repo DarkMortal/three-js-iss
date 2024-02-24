@@ -76,6 +76,7 @@ body{
 #issMap {
     height: 40vh;
     width: 100vw;
+    overflow: hidden;
 }
 .disappear {
     animation: fadeInAnimation ease 3s;

@@ -24,19 +24,14 @@ function googleTranslateElementInit() {
     "google_translate_element"
   );
 }
-window.onbeforeunload = () => {
-  window.scrollTo(0, 0);
-};
+window.onbeforeunload = () => window.scrollTo(0, 0);
 
 window.onload = () => {
   locked.checked = true;
   data.checked = true;
   controls.checked = true;
-  document.body.style.overflowY = "auto";
+  document.body.style.overflow = "auto";
   googleTranslateElementInit();
   document.querySelector(".splash").classList.add("disappear");
-  setTimeout(
-    () => (document.querySelector(".splash").style.display = "none"),
-    2900
-  );
+  setTimeout(() => document.querySelector(".splash").style.display = "none", 2900);
 };
