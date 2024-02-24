@@ -19,14 +19,9 @@ export default function AboutTeam(props) {
           <div className="row g-2">
             <div className="col-md-9">
               <div className="card-body">
-                <h2 className="card-title">About Us</h2>
+                <h2 className="card-title">About Me</h2>
                 <p className="card-text">
-                  We are engineers, we love to build techs that are useful, and
-                  help a lot of people in their life. This project was a challenge for us, and
-                  we love to take challenges, that's why we selected this project
-                  in the first place. We learned a lot of things not only about the
-                  tech that we used, also about NASA and Space itself. Most important of
-                  all we enjoyed the process entirely.
+                I am an engineer, I love to build tech that is useful and helps a lot of people in their lives. This project was a challenge for me, and I love to take on challenges, that's why I selected this <a href="https://2022.spaceappschallenge.org/challenges/2022-challenges/track-the-iss/teams/thinkspace/project" target='_blank' style={{color: "inherit"}}><strong>Problem Statement</strong></a> in the first place. I learned a lot of things not only about the tech that I used, but also about NASA and space itself. Most importantly, I enjoyed the process entirely.
                 </p>
               </div>
             </div>
