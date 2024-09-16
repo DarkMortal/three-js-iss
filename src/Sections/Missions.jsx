@@ -25,7 +25,7 @@ export default function Missions(props) {
         <div id="missions" className="accordion accordion-flush box" style={{padding: '0px', borderRadius: '0px'}}>
             {
                 Array.from(data,elm =>
-                    <div className="accordion-item">
+                    <div className="accordion-item" key={elm.id}>
                         <h2 className="accordion-header" id={`accrdionHeading${elm.id}`}>
                         <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#accrdionCollapse${elm.id}`} aria-controls={`accrdionCollapse${elm.id}`} aria-expanded="false" style={props.isDark?darkTheme:lightTheme}>
                             <b>{elm.heading}</b>
